@@ -24,7 +24,7 @@ class Plataform(Application.Application):
         self.allPageNames = self.repository.getAllPageNames(moduleName,lessonName)
         print(f'self.allPageNames = {self.allPageNames}')
         self.pagePointer = 10
-        self.pagesImagePath = f'''{self.application.pathMannanger.getApiModulePath('course')}resourse\\modules\\{moduleName}\\{lessonName}\\image\\'''
+        self.pagesImagePath = f'''{self.application.pathMannanger.getApiPath('course')}resourse\\modules\\{moduleName}\\{lessonName}\\image\\'''
 
     def nextPage(self):
         self.removePage()

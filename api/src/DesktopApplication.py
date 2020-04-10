@@ -1,6 +1,5 @@
-from domain.control import PathMannanger
-
 if __name__ == '__main__' :
+    from domain.control import PathMannanger
     pathMannanger = PathMannanger.PathMannanger()
 
 import os

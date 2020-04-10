@@ -8,7 +8,7 @@ def makeAScript(courseName,moduleName,lessonName,amountOfPagesToMake,plataform) 
 
     moduleNameParsed = coursePathFunction.parseName(moduleName)
     lessonNameParsed = coursePathFunction.parseName(lessonName)
-    pagesPath = plataform.pathMannanger.getApiModulePath('course')+'resourse/modules/'+moduleNameParsed+'/'+lessonNameParsed+'/'
+    pagesPath = plataform.pathMannanger.getApiPath('course')+'resourse/modules/'+moduleNameParsed+'/'+lessonNameParsed+'/'
 
     previousPagePosition = '0x495x83x560'
     nextPagePosition = '901x497x996x562'
@@ -20,6 +20,6 @@ def makeAScript(courseName,moduleName,lessonName,amountOfPagesToMake,plataform) 
         #scriptList.append(f'page={pageIndex} frames={framesPerPage} button={previousPageButtom.position} button={nextPageButton.position}')
         scriptList.append(f'page={pageIndex} frames={framesPerPage} button={previousPagePosition} button={nextPagePosition}')
 
-    scriptPath = pagesPath+'script.ht'
+    scriptPath = f'''pagesPath+'script.{plataform.extension}'''
     with open(scriptPath,"w+",encoding="utf-8") as scriptFile :
         scriptFile.write('\n'.join(scriptList))
