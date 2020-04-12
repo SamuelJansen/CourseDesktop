@@ -8,7 +8,7 @@ def makeAScript(courseName,moduleName,lessonName,amountOfPagesToMake,plataform) 
 
     moduleNameParsed = coursePathFunction.parseName(moduleName)
     lessonNameParsed = coursePathFunction.parseName(lessonName)
-    pagesPath = plataform.pathMannanger.getApiPath('course')+'resourse/modules/'+moduleNameParsed+'/'+lessonNameParsed+'/'
+    pagesPath = plataform.pathMannanger.getApiPath('course')+'resource/modules/'+moduleNameParsed+'/'+lessonNameParsed+'/'
 
     previousPagePosition = '0x495x83x560'
     nextPagePosition = '901x497x996x562'

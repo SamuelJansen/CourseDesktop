@@ -2,41 +2,23 @@ if __name__ == '__main__' :
     from domain.control import PathMannanger
     pathMannanger = PathMannanger.PathMannanger()
 
-import os
-import numpy as np
+    import os
+    import numpy as np
 
-import Course, ApplicationUser
+    import Course, ApplicationUser, CourseRepository
 
-import Plataform
+    import Plataform
 
-import ArrowKey
+    Plataform.Plataform(pathMannanger,
+        repository = CourseRepository,
+        floor = False
+    )
 
-plataformName = 'desktop'
-colors =    {
-            'black' : (0,0,0),
-            'white' : (255,255,255),
-            'backgroundColor' : (237,201,202),
-            'red' : (255,0,0)
-            }
-fps = 30
-aps = 30
-plataform = Plataform.Plataform(plataformName,fps,aps,colors,pathMannanger,
-    floor = False
-)
+    registration = '000001'
+    password = 'abcd1234'
+    courseNames = ['macro_2020_03 1']
 
-registration = '000001'
-password = 'abcd1234'
-courseNames = ['macro_2020_03 1']
+    plataform.setApplicationUser(registration,password)
+    plataform.buildPage()
 
-# aplicationUser = ApplicationUser.ApplicationUser(registration,password,plataform,
-#     courseNames = courseNames
-# )
-plataform.setApplicationUser(registration,password)
-plataform.buildPage()
-
-
-
-arrow = ArrowKey.ArrowKey()
-move = [np.random.randint(3)-1,np.random.randint(3)-1]
-
-plataform.run(arrow)
+    plataform.run()
