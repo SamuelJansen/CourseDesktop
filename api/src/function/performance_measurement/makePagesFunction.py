@@ -10,7 +10,7 @@ def makeSoManyPages(courseName,moduleName,lessonName,amountOfPagesToMake,platafo
 
     moduleNameParsed = coursePathFunction.parseName(moduleName)
     lessonNameParsed = coursePathFunction.parseName(lessonName)
-    pagesPath = plataform.pathMannanger.getApiPath('course')+'resource/modules/'+moduleNameParsed+'/'+lessonNameParsed+'/image/'
+    pagesPath = plataform.globals.getApiPath('course')+'resource/modules/'+moduleNameParsed+'/'+lessonNameParsed+'/image/'
     basePageImage = imageFunction.getImage(pagesPath+'performance_measurement.png',plataform.size,plataform)
 
     for page in range(amountOfPagesToMake) :

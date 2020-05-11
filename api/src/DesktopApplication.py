@@ -1,6 +1,6 @@
 if __name__ == '__main__' :
-    from domain.control import PathMannanger
-    pathMannanger = PathMannanger.PathMannanger()
+    from domain.control import Globals
+    globals = Globals.Globals()
 
     import os
     import numpy as np
@@ -9,7 +9,7 @@ if __name__ == '__main__' :
 
     import Plataform
 
-    Plataform.Plataform(pathMannanger,
+    Plataform.Plataform(globals,
         repository = CourseRepository,
         floor = False
     )
